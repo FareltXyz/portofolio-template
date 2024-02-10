@@ -6,9 +6,9 @@ import Link from "next/link";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoLogoDiscord } from "react-icons/io5"
 import { MdCancel } from "react-icons/md";
-import { useState } from "react";
 import { useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 export default function Pages() {
     useEffect(() => {
@@ -61,7 +61,7 @@ export default function Pages() {
               onSubmit={SendMessage}>
                 <h1 className="text-xl text-center font-extrabold text-[var(--txt)] ">Get In Touch 📮</h1>
                 <div className="flex flex-row space-x-2.5 mt-2.5">
-                    <label for="name" >
+                    <label htmlFor="name" >
                          <p className="text-[var(--txt)]">
                              Name<span className="text-[#c62707] ml-1 text-lg">*</span>
                          </p> 
@@ -73,7 +73,7 @@ export default function Pages() {
                          placeholder="Your name"
                          required />
                     </label>
-                    <label for="Email" >
+                    <label htmlFor="Email" >
                          <p className="text-[var(--txt)]">
                              Email<span className="text-[#c62707] ml-1 text-lg">*</span>
                          </p> 
@@ -87,7 +87,7 @@ export default function Pages() {
                     </label>
                 </div>
                 <div className="flex flex-col items-center "> 
-                 <label for="message" className="w-full">
+                 <label htmlFor="message" className="w-full">
                   <p className="text-[var(--txt)] mt-2">
                     Message<span className="text-[#c62707] ml-1 text-lg">*</span>
                   </p>
@@ -104,18 +104,20 @@ export default function Pages() {
                 </label> 
                 </div>
                 <div className="h-[1px] mt-2.5 w-full bg-white"></div>
-                <Link href="mailto:fareltxyz@gmail.com" className="flex flex-row text-[var(txt--)] mt-3 hover:scale-90 hover:translate-x-[-10px]"> 
-                 <MdOutlineEmail className="m-1.5 text-[var(--txt)]"/>
-                 <p className="text-[var(--txt)]">
-                  fareltxyz@gmail.com
-                 </p>
-                </Link>
-                <Link href="https://discordapp.com/users/823379272127348796" className="flex flex-row text-[var(txt--)] hover:scale-90 hover:translate-x-[-10px]"> 
-                 <IoLogoDiscord className="m-1.5 text-[var(--txt)]"/>
-                 <p className="text-[var(--txt)]">
-                  FareltXyz#2553
-                 </p>
-                </Link>
+                <div className="w-[44%]">
+                  <Link href="mailto:fareltxyz@gmail.com" className="flex flex-row text-[var(txt--)] mt-3 hover:scale-90 hover:translate-x-[-10px]"> 
+                   <MdOutlineEmail className="m-1.5 text-[var(--txt)]"/>
+                   <p className="text-[var(--txt)]">
+                     fareltxyz@gmail.com
+                   </p>
+                  </Link>
+                  <Link href="https://discordapp.com/users/823379272127348796" className="flex flex-row text-[var(txt--)] hover:scale-90 hover:translate-x-[-10px]"> 
+                    <IoLogoDiscord className="m-1.5 text-[var(--txt)]"/>
+                    <p className="text-[var(--txt)]">
+                      FareltXyz#2553
+                    </p>
+                  </Link>
+                </div>
               <button id="remove" className="group bg-red-600 rounded-full w-10 h-10 flex justify-center items-center right-10 bottom-20 mb-5 translate-y-[-1000px] transition-transform ease-in-out duration-200 fixed" type="button" title="remove"> <MdCancel className="text-2xl text-[var(--txt)]"/> </button>
               <button className="bg-green-600 rounded-full w-10 h-10 flex justify-center items-center right-10 bottom-10 fixed" type="submit" title="Send"> <IoMdSend className="text-2xl text-[var(--txt)]"/> </button>
              </form>

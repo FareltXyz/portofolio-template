@@ -8,8 +8,6 @@ const limiter = rateLimit({
 });
 
 export default async function handler(req, res) {
-  console.log(req)
-  console.log(res)
   try {
     await limiter.check(res, 3, "CACHE_TOKEN");
     if (req.method === "POST") {

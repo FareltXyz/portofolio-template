@@ -3,11 +3,13 @@ import { Webhook, MessageBuilder } from "webhook-discord";
 const Hook = new Webhook(process.env.DISCORD_WEBHOOK);
 
 const limiter = rateLimit({
-  interval: 60 * 60 * 1000,
+  interval: 60 * 1000,
   uniqueTokenPerInterval: 500,
 });
 
 export default async function handler(req, res) {
+  console.log(req)
+  console.log(res)
   try {
     await limiter.check(res, 3, "CACHE_TOKEN");
     if (req.method === "POST") {

@@ -14,9 +14,9 @@ export default function Pages() {
     useEffect(() => {
        document.getElementById("remove").addEventListener("click", remove)
     }, [])
-    async function SendMessage() {
+    function SendMessage() {
         
-        const send = await fetch("/api/sendcontact", {
+        fetch("/api/sendcontact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -24,11 +24,9 @@ export default function Pages() {
           body: JSON.stringify({
             from: document.getElementById("name").value,
             email: document.getElementById("email").value,
-            msg: document.gestElementById("message").value,
+            msg: document.getElementById("message").value,
           }),
         });
-        let res = await send.json()
-        toast[res.type](res.message)
     }
 
     function check(){
@@ -57,8 +55,7 @@ export default function Pages() {
             <main className="flex justify-center items-center w-screen h-80 mt-10">
               <Toaster />
               <div className="w-2/5 md:w-2/4 h-full flex items-center flex-col">
-             <form 
-              onSubmit={SendMessage}>
+             <form onSubmit={SendMessage}>
                 <h1 className="text-xl text-center font-extrabold text-[var(--txt)] ">Get In Touch 📮</h1>
                 <div className="flex flex-row space-x-2.5 mt-2.5">
                     <label htmlFor="name" >
@@ -67,6 +64,7 @@ export default function Pages() {
                          </p> 
                          <input 
                          id="name" 
+                         name="from"
                          type="text" 
                          onChange={check}
                          className="h-5 w-32 xs:w-52 md:w-56 mt-2.5 focus:outline-none pl-1.5 text-[var(--txt)] rounded-md bg-[#2a2a2a] py-4" 
@@ -79,6 +77,7 @@ export default function Pages() {
                          </p> 
                          <input 
                          id="email" 
+                         name="email"
                          type="email"
                          onChange={check} 
                          className="h-5 w-32 xs:w-52 md:w-56 mt-2.5 focus:outline-none pl-1.5 text-[var(--txt)] rounded-md bg-[#2a2a2a] py-4" 
@@ -93,6 +92,7 @@ export default function Pages() {
                   </p>
                   <textarea 
                   id="message" 
+                  name="msg"
                   className="bg-[#2a2a2a] resize-none p-3 text-[var(--txt)] w-[99.5%] rounded-md h-40 mt-2 focus:outline-none " 
                   maxLength={225} 
                   onChange={check}

@@ -55,7 +55,7 @@ export default function Pages() {
             <main className="flex justify-center items-center w-screen h-80 mt-10">
               <Toaster />
               <div className="w-2/5 md:w-2/4 h-full flex items-center flex-col">
-             <form onSubmit={SendMessage}>
+             <form onSubmit={SendMessage} method="POST">
                 <h1 className="text-xl text-center font-extrabold text-[var(--txt)] ">Get In Touch 📮</h1>
                 <div className="flex flex-row space-x-2.5 mt-2.5">
                     <label htmlFor="name" >

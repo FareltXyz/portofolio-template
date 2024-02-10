@@ -3,7 +3,7 @@ import { Webhook, MessageBuilder } from "webhook-discord";
 const Hook = new Webhook(process.env.DISCORD_WEBHOOK);
 
 const limiter = rateLimit({
-  interval: 60 * 1000,
+  interval: 60 * 60 * 1000,
   uniqueTokenPerInterval: 500,
 });
 

@@ -36,11 +36,9 @@ export default function Pages() {
     document.getElementById("length").innerHTML = message.value.length + "/225"
     if (name.value || email.value || message.value) {
       document.getElementById("remove").classList.remove("translate-y-[-1000px]")
-      document.getElementById("removexs").classList.remove("hidden")
       document.getElementById("removexs").classList.remove("opacity-0")
     } else if (!name.value && !email.value && !message.value) {
       document.getElementById("remove").classList.add("translate-y-[-1000px]")
-      document.getElementById("removexs").classList.add("hidden")
       document.getElementById("removexs").classList.add("opacity-0")
     }
   }
@@ -53,7 +51,6 @@ export default function Pages() {
     email.value = null
     message.value = null
     document.getElementById("remove").classList.add("translate-y-[-1000px]")
-    document.getElementById("removexs").classList.add("hidden")
     document.getElementById("removexs").classList.add("opacity-0")
     document.getElementById("length").innerHTML = "0/225"
   }
@@ -113,10 +110,10 @@ export default function Pages() {
 
                 </textarea>
               </label>
-              <div className="relative text-[var(--txt)] flex justify-end flex-row w-[100%]"><button id="removexs" onClick={remove} title="remove" className="absolute bottom-[138px] scale-150 right-3.5 transition-all opacity-0 ease-in-out duration-200 hidden md:hidden" type="button"><MdCancel /></button></div>
+              <div className="relative text-[var(--txt)] flex justify-end flex-row w-[100%]"><button id="removexs" onClick={remove} title="remove" className="absolute bottom-[138px] scale-150 right-3.5 transition-all opacity-0 ease-in-out duration-[600ms] md:hidden" type="button"><MdCancel /></button></div>
             </div>
             <div className="h-[1px] mt-2.5 w-full bg-white"></div>
-            <div className="w-[70%] md:w-[44%]">
+            <div className="w-[75%] md:w-[44%]">
               <Link href="mailto:fareltxyz@gmail.com" className="flex flex-row text-[var(txt--)] mt-3 hover:scale-90 hover:translate-x-[-10px]">
                 <MdOutlineEmail className="m-1.5 text-[var(--txt)]" />
                 <p className="text-[var(--txt)]">

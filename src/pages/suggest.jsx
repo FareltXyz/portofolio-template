@@ -116,7 +116,7 @@ export default function Pages() {
               <div className="relative text-[var(--txt)] flex justify-end flex-row w-[100%]"><button id="removexs" onClick={remove} title="remove" className="absolute bottom-[138px] scale-150 right-3.5 transition-all opacity-0 ease-in-out duration-200 hidden md:hidden" type="button"><MdCancel /></button></div>
             </div>
             <div className="h-[1px] mt-2.5 w-full bg-white"></div>
-            <div className="w-[44%]">
+            <div className="w-[70%] md:w-[44%]">
               <Link href="mailto:fareltxyz@gmail.com" className="flex flex-row text-[var(txt--)] mt-3 hover:scale-90 hover:translate-x-[-10px]">
                 <MdOutlineEmail className="m-1.5 text-[var(--txt)]" />
                 <p className="text-[var(--txt)]">

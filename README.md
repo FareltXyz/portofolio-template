@@ -1,8 +1,19 @@
 # 📃📃📃 Portofolio template
-
-## build with next.js
+## Installing
+ #### Install Next.js
+  ```shell
+  npm install next --save
+ ```
+ #### Package install
+ ```shell
+ npm install
+```
+## Starting
+ 
  #### start
  ```shell
  npm run dev
  ```
-![screenshot](/screenshot/Screenshot.png "SCreenshot")
+
+### Screenshot
+![screenshot](/screenshot/Screenshot.png "Screenshot")
